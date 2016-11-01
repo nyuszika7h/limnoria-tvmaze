@@ -134,11 +134,8 @@ class tvmaze(callbacks.Plugin):
                             show['airtime'])
                     l.append(this_show)
         
-        tonight_shows = ', '.join(l)
-
-        irc.reply(format('%s: %s',
-            ircutils.underline("Tonight's Shows"),
-            tonight_shows))
+        l[0] = " ".join((ircutils.underline("Tonight's Shows") + ":", l[0]))
+        irc.replies(l)
 
                 
 
